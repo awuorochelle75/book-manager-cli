@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import declarative_base, relationship
 from datetime import datetime
+from sqlalchemy import create_engine
 
 Base = declarative_base()
 
@@ -55,3 +56,6 @@ class BorrowRecord(Base):
 
     def __repr__(self):
         return f"<BorrowRecord(user_id={self.user_id}, book_id={self.book_id}, borrow_date={self.borrow_date}, return_date={self.return_date})>"
+
+engine = create_engine("sqlite:///app.db")
+Base.metadata.create_all(engine)

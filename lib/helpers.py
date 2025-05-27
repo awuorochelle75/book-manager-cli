@@ -1,12 +1,15 @@
 # lib/helpers.py
-
+import os
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from db.models import User, Book, BorrowRecord
 from datetime import datetime
 
 # Setup DB connection and session
-engine = create_engine('sqlite:///app.db')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # directory of cli.py, i.e., lib/
+DB_PATH = os.path.join(BASE_DIR, 'db', 'app.db')       # point to the db folder
+
+engine = create_engine(f'sqlite:///{DB_PATH}')
 Session = sessionmaker(bind=engine)
 session = Session()
 

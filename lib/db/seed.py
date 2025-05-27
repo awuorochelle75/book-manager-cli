@@ -1,10 +1,14 @@
+import os
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from models import Base, Book, User, BorrowRecord
 from datetime import datetime
 
 # Connect to the database
-engine = create_engine('sqlite:///app.db')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # This gets the directory where seed.py lives
+DB_PATH = os.path.join(BASE_DIR, 'app.db')            # Path to the app.db in the same folder as seed.py
+
+engine = create_engine(f'sqlite:///{DB_PATH}')
 Session = sessionmaker(bind=engine)
 session = Session()
 

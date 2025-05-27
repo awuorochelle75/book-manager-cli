@@ -1,4 +1,4 @@
-# main.py
+# cli.py
 
 from helpers import (
     list_all_users, find_user_by_name, find_user_by_id, create_user,
