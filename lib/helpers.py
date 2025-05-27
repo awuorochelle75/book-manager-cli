@@ -2,7 +2,7 @@
 
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from lib.db.models import User, Book, BorrowRecord
+from db.models import User, Book, BorrowRecord
 from datetime import datetime
 
 # Setup DB connection and session
