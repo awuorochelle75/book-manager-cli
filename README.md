@@ -89,6 +89,10 @@ Defines the SQLAlchemy models:
 - `Borrow` : tracks which user borrowed which book.
 
 
+###`database.py`
+Initilizes the database,creates tables and establishes a session for database transactions.
+
+
 
 
 
