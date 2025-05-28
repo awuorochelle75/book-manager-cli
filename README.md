@@ -80,6 +80,7 @@
 
 
 ## `cli.py`
+The main interactive script.Presents the user menu and calls the appropriate functions based on user input.Handles the control flow of the entire application.
 
 
 
