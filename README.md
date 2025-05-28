@@ -1,10 +1,10 @@
 # Book Management System
-A Command-Line Book Manager for Libraries and Bookshops.
+- A Command-Line Book Manager for Libraries and Bookshops.
 
-## Learning Goals
+## Problem Statement
 
-- Discuss the basic directory structure of a CLI.
-- Outline the first steps in building a CLI.
+- Libraries,readers,and small bookshops often struggle to keep track of books,users and borrow records.Without a dedicated system,it becomes easy to lose records or forget who borrowed a book.
+
 
 ***
 
