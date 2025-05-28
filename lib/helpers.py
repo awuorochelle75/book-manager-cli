@@ -1,5 +1,6 @@
 # lib/helpers.py
 import os
+from sqlalchemy import func
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from sqlalchemy import or_
@@ -27,7 +28,7 @@ def list_all_users():
             print(f"{user.id}. {user.name}")
 
 def find_user_by_name(name):
-    user = session.query(User).filter_by(name=name).first()
+    user = session.query(User).filter(User.name.ilike(f"%{name}%")).first()
     if user:
         print(f"✅ Found: {user.id} - {user.name}")
     else:
@@ -83,7 +84,7 @@ def find_book_by_title(title):
             print(f"📖 ID: {book.id}, Title: {book.title}, Author: {book.author}")
     else:
         print("❌ No book found with that title.")
-        
+
 def find_book_by_id(book_id):
     book = session.query(Book).get(book_id)
     if book:
