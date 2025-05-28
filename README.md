@@ -82,6 +82,12 @@
 ## `cli.py`
 The main interactive script.Presents the user menu and calls the appropriate functions based on user input.Handles the control flow of the entire application.
 
+### `models.py`
+Defines the SQLAlchemy models:
+- `User` : stores user information.
+- `Book` : stores book information.
+- `Borrow` : tracks which user borrowed which book.
+
 
 
 
