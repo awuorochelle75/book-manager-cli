@@ -89,8 +89,16 @@ Defines the SQLAlchemy models:
 - `Borrow` : tracks which user borrowed which book.
 
 
-###`database.py`
+### `database.py`
 Initilizes the database,creates tables and establishes a session for database transactions.
+
+### `helpers.py`
+Contains helper functions for each operation:
+- `list_users()`, `create_user()`, `update_user()` etc.
+- `list_books()`, `create_book()`, `find_book_by_title()`, etc
+- `borrow_book()`, `return_book()`, `list_borrow_records()`, etc.
+
+
 
 
 
