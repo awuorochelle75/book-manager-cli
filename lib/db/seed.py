@@ -51,11 +51,6 @@ book24 = Book(title="The Housemaid's Wedding", author="Freida McFadden")
 book25 = Book(title="The Silent Patient", author="Alex Michaelides")
 
 # --- Sample BorrowRecords ---
-borrow1 = BorrowRecord(user=user1, book=book1, borrow_date=datetime(2025, 5, 1))
-book1.status = "borrowed"
-
-borrow2 = BorrowRecord(user=user2, book=book3, borrow_date=datetime(2025, 5, 10))
-book3.status = "borrowed"
 
 # Add all users, books, and borrow records to the session
 session.add_all([user1, user2, user3, user4, user5])
@@ -68,9 +63,13 @@ session.add_all([
     book21, book22, book23, book24, book25
 ])
 
-session.add_all([borrow1, borrow2])
 
 # Commit changes
 session.commit()
+
+BorrowRecord.create(session, user1, book1)
+BorrowRecord.create(session, user2, book3)
+
+
 
 print("✅ Seeded the database successfully!")
