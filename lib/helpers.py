@@ -2,6 +2,7 @@
 import os
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
+from sqlalchemy import or_
 from db.models import User, Book, BorrowRecord
 from datetime import datetime
 
@@ -76,12 +77,13 @@ def list_all_books():
             print(f"{book.id}. {book.title} by {book.author} - Status: {book.status}")
 
 def find_book_by_title(title):
-    book = session.query(Book).filter_by(title=title).first()
-    if book:
-        print(f"✅ Found: {book.id}. {book.title} by {book.author} - {book.status}")
+    books = session.query(Book).filter(Book.title.ilike(f"%{title}%")).all()
+    if books:
+        for book in books:
+            print(f"📖 ID: {book.id}, Title: {book.title}, Author: {book.author}")
     else:
         print("❌ No book found with that title.")
-
+        
 def find_book_by_id(book_id):
     book = session.query(Book).get(book_id)
     if book:
