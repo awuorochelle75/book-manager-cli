@@ -37,6 +37,7 @@
 ## Menu Options
 - When you run the CLI, you'll be presented with the following options:
  - Please select an option:
+
    0. Exit
 
    1.List all users
@@ -70,6 +71,15 @@
    15.Return a book (delete borrow record)
 
    16.List books borrowed by a user
+
+
+## Technologies used
+- Python 3
+- SQLAlchemy ORM
+- SQLite
+
+
+## `cli.py`
 
 
 
