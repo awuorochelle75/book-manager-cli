@@ -26,6 +26,14 @@
 - Delete users.
 - View which books each user has borrowed.
 
+### Borrowing and returning
+- Borrow a book(create a borrow record)
+- Return a book(delete borrow record)
+- View all borrow records
+- List books borrowed by a specific user
+
+
+
 
 
 ```console
