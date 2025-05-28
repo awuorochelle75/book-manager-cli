@@ -98,6 +98,39 @@ Contains helper functions for each operation:
 - `list_books()`, `create_book()`, `find_book_by_title()`, etc
 - `borrow_book()`, `return_book()`, `list_borrow_records()`, etc.
 
+## How to Run
+### Getting Started 
+1. **Clone the repository**   
+Open your terminal and run the following command:
+    ```sh
+    $git clone https://github.com/awuorochelle75/book-manager-cli.git
+
+2. **Navigate to the project folder**
+    ```sh
+        $cd book-manager-cli
+
+3. **Set up and activate a virtual environment with pipenv**
+    ```sh
+        $pipenv install
+        $pipenv shell
+
+4. **Set up the database**
+    ```sh
+        $pipenv install sqlalchemy alembic
+        $alembic init migrations
+
+
+5.  **Seed the database**
+    ```sh
+        $python seed.py
+
+## **Usage**
+1. You can run the CLI using:
+     ```sh
+        $python cli.py
+
+
+
 
 
 
