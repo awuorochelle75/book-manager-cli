@@ -1,4 +1,5 @@
-# Phase 3 CLI Project Template
+# Book Management System
+A Command-Line Book Manager for Libraries and Bookshops.
 
 ## Learning Goals
 
