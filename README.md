@@ -18,6 +18,14 @@
 - Delete a book.
 - Check which books are currently available or borrowed.
 
+### User Management
+- List all users.
+- Find users by name or ID
+- Create new users
+- Update user information.
+- Delete users.
+- View which books each user has borrowed.
+
 
 
 ```console
