@@ -8,12 +8,17 @@
 
 ***
 
-## Introduction
+## Features
 
-You now have a basic idea of what constitutes a CLI, but you (understandably!)
-likely don't have the best idea of where to start. Fork and clone this lesson
-for a template for your CLI. Take a look at the directory structure before we
-begin:
+### Book Management
+- List all books.
+- Find book by title or ID.
+- Add new books with details like title and author.
+- Update existing book information.
+- Delete a book.
+- Check which books are currently available or borrowed.
+
+
 
 ```console
 .
