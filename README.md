@@ -34,6 +34,47 @@
 
 
 
+## Menu Options
+- When you run the CLI, you'll be presented with the following options:
+ - Please select an option:
+   0. Exit
+
+   1.List all users
+
+   2.Find user by name
+
+   3.Find user by id
+
+   4.Create user
+
+   5.Update user
+
+   6.Delete user
+
+   7.List all books
+
+   8.Find book by title
+
+   9.Find book by id
+
+   10.Create book
+
+   11.Update book
+
+   12.Delete book
+
+   13.List all borrow records
+
+   14.Borrow a book (create borrow record)
+
+   15.Return a book (delete borrow record)
+
+   16.List books borrowed by a user
+
+
+
+
+
 
 
 ```console
