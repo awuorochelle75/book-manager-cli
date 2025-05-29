@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from models import Base, Book, User, BorrowRecord
 from datetime import datetime
 
-# Connect to the database
+# Here i am doing the connection of the   database
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # This gets the directory where seed.py lives
 DB_PATH = os.path.join(BASE_DIR, 'app.db')            # Path to the app.db in the same folder as seed.py
 
@@ -12,18 +12,18 @@ engine = create_engine(f'sqlite:///{DB_PATH}')
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# Drop all existing data (optional: for resetting)
+
 Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)
 
-# --- Sample Users ---
+# Sample of the users i have.
 user1 = User(name="Alice Johnson")
 user2 = User(name="Bob Smith")
 user3 = User(name="Clara Kibet")
 user4 = User(name="David Kimani")
 user5 = User(name="Eva Mwangi")
 
-# --- Sample Books ---
+# Sample of books in my library or my bookshop
 book1 = Book(title="The Great Gatsby", author="F. Scott Fitzgerald")
 book2 = Book(title="To Kill a Mockingbird", author="Harper Lee")
 book3 = Book(title="1984", author="George Orwell")
@@ -50,9 +50,9 @@ book23 = Book(title="The Inmate", author="Freida McFadden")
 book24 = Book(title="The Housemaid's Wedding", author="Freida McFadden")
 book25 = Book(title="The Silent Patient", author="Alex Michaelides")
 
-# --- Sample BorrowRecords ---
 
-# Add all users, books, and borrow records to the session
+
+# We are addingall users, books, and borrow records to the session
 session.add_all([user1, user2, user3, user4, user5])
 
 session.add_all([
@@ -64,7 +64,7 @@ session.add_all([
 ])
 
 
-# Commit changes
+# Here i am committing the from the session changes
 session.commit()
 
 BorrowRecord.create(session, user1, book1)
