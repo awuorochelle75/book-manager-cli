@@ -7,17 +7,17 @@ from sqlalchemy import or_
 from db.models import User, Book, BorrowRecord
 from datetime import datetime
 
-# Setup DB connection and session
+# Here is setting up of DB connection and session
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # directory of cli.py, i.e., lib/
-DB_PATH = os.path.join(BASE_DIR, 'db', 'app.db')       # point to the db folder
+DB_PATH = os.path.join(BASE_DIR, 'db', 'app.db')       # Here we are pointing  to the db folder
 
 engine = create_engine(f'sqlite:///{DB_PATH}')
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# -----------------------
+
 # USER FUNCTIONS
-# -----------------------
+
 
 def list_all_users():
     users = session.query(User).all()
@@ -65,9 +65,9 @@ def delete_user(user_id):
     else:
         print("❌ User not found.")
 
-# -----------------------
+
 # BOOK FUNCTIONS
-# -----------------------
+
 
 def list_all_books():
     books = session.query(Book).all()
@@ -117,9 +117,8 @@ def delete_book(book_id):
     else:
         print("❌ Book not found.")
 
-# -----------------------
-# BORROWING FUNCTIONS
-# -----------------------
+
+# BORROWING FUNCTIONs
 
 def list_all_borrow_records():
     records = session.query(BorrowRecord).all()
