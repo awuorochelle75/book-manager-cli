@@ -5,16 +5,16 @@ from sqlalchemy import create_engine
 
 Base = declarative_base()
 
-# -----------------------
+
 # Book Model
-# -----------------------
+
 class Book(Base):
     __tablename__ = 'books'
 
     id = Column(Integer, primary_key=True)
     title = Column(String)
     author = Column(String)
-    status = Column(String, default="available")  # available or borrowed
+    status = Column(String, default="available") 
 
     borrow_records = relationship("BorrowRecord", back_populates="book")
 
@@ -41,14 +41,14 @@ class Book(Base):
         session.delete(self)
         session.commit()
 
-    # Property example: ensure book is available
+    
     @property
     def is_available(self):
         return self.status == "available"
 
-# -----------------------
+
 # User Model
-# -----------------------
+
 class User(Base):
     __tablename__ = 'users'
 
@@ -80,15 +80,15 @@ class User(Base):
         session.delete(self)
         session.commit()
 
-    # Property example: borrowed book count
+   
     @property
     def borrowed_books_count(self):
         return len(self.borrow_records)
 
 
-# -----------------------
+
 # Borrow Record Model
-# -----------------------
+
 class BorrowRecord(Base):
     __tablename__ = 'borrow_records'
 
@@ -124,19 +124,19 @@ class BorrowRecord(Base):
         return session.query(cls).filter_by(id=record_id).first()
 
     def delete(self, session):
-        # Return book to available when record is deleted
+        # here returns book to available when record is deleted
         self.book.status = "available"
         session.delete(self)
         session.commit()
 
-    # Property example: is returned
+    
     @property
     def is_returned(self):
         return self.return_date is not None
 
 
-# -----------------------
+
 # DB Setup
-# -----------------------
+
 engine = create_engine("sqlite:///app.db")
 Base.metadata.create_all(engine)
